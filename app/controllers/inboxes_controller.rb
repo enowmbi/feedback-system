@@ -1,5 +1,5 @@
 class InboxesController < ApplicationController
-  before_action :set_inbox, only: %i[ show edit update destroy ]
+  before_action :set_inbox, only: %i[show edit update destroy]
 
   # GET /inboxes or /inboxes.json
   def index
@@ -7,8 +7,7 @@ class InboxesController < ApplicationController
   end
 
   # GET /inboxes/1 or /inboxes/1.json
-  def show
-  end
+  def show; end
 
   # GET /inboxes/new
   def new
@@ -16,8 +15,7 @@ class InboxesController < ApplicationController
   end
 
   # GET /inboxes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /inboxes or /inboxes.json
   def create
@@ -58,13 +56,14 @@ class InboxesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_inbox
-      @inbox = Inbox.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def inbox_params
-      params.require(:inbox).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_inbox
+    @inbox = Inbox.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def inbox_params
+    params.require(:inbox).permit(:name)
+  end
 end
